@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCancersTable extends Migration
+class CreateCancerTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCancersTable extends Migration
      */
     public function up()
     {
-        Schema::create('cancers', function (Blueprint $table) {
+        Schema::create('cancer_type', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('cancer_type_name');
+            $table->text("cancer_type_description");
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateCancersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cancers');
+        Schema::dropIfExists('cancer_type');
     }
 }
