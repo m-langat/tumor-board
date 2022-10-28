@@ -12,7 +12,7 @@ class CancerType extends Model
 
     protected $table = "cancer_type";
 
-    protected $fillable = ['cancer_type_name','cancer_type_description'];
+    protected $fillable = ['cancer_type_name','cancer_type_description', 'cancer_type_id'];
 
     public function cancers(){
         return $this->hasMany(App\Models\Cancer::class);
